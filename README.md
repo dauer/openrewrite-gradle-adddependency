@@ -6,15 +6,15 @@ I am trying to add a dependency `implementation "sag:sagslager-klient:1.0.0"` to
 
 The project is written in Groovy and uses Gradle for building.
 
-I can remove dependencies and add plugins to the build.gradle file, but I can't add dependencies.
+I can remove dependencies and add plugins to the `build.gradle` file, but I can't add dependencies...
 
 ## Issue
-I'm pretty sure the issues is because the `onlyIfUsing` rule isn't triggered by *.groovy files but only by *.java files. \
-If I add a *.java file (or rename the *.groovy file) it works...
+I'm pretty sure the issues is because the `onlyIfUsing` rule isn't triggered by `*.groovy` files but only by `*.java` files. \
+If I add a `*.java` file (or rename the `*.groovy` file) it works...
 
 ## How to reproduce
 
-Running the rewriteDryRun results in the following output (on the provided code sample)
+Running the rewriteDryRun results in the following output (on the provided code sample):
 
     > Task :rewriteDryRun
     Validating active recipes
@@ -29,7 +29,7 @@ Running the rewriteDryRun results in the following output (on the provided code 
     /home/thomas/workspace/openrewrite-gradle-adddependency/build/reports/rewrite/rewrite.patch
     Run 'gradle rewriteRun' to apply the recipes.
 
-And generates the following patch file missing the `+    implementation "sag:sagslager-klient:1.0.0"` dependency
+And generates the following patch file missing the `+    implementation "sag:sagslager-klient:1.0.0"` dependency:
 
     diff --git a/build.gradle b/build.gradle
     index e1ededf..64e07c1 100644
@@ -57,7 +57,7 @@ If I rename the Groovy file from:
     `src/main/groovy/MyClass.groovy`
 To:
     `src/main/groovy/MyClass.java` \
-And run the rewriteDryRun it results in the following and expected output 
+And run the rewriteDryRun it results in the following and expected output:
 
     > Task :rewriteDryRun
     Validating active recipes
@@ -74,7 +74,7 @@ And run the rewriteDryRun it results in the following and expected output
     /home/thomas/workspace/openrewrite-gradle-adddependency/build/reports/rewrite/rewrite.patch
     Run 'gradle rewriteRun' to apply the recipes.
 
-And the dependency is added to the patch file
+And the dependency is added to the patch file:
 
     diff --git a/build.gradle b/build.gradle
     index e1ededf..5c3e9ba 100644
