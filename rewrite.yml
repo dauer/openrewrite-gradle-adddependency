@@ -1,0 +1,18 @@
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: com.yourorg.myexample
+displayName: Add Gradle dependency example
+recipeList:
+  - org.openrewrite.gradle.AddDependency:
+      groupId: sag
+      artifactId: "sagslager-klient"
+      version: 1.0.0
+      configuration: implementation
+      onlyIfUsing: java.util.Date
+  - org.openrewrite.gradle.plugins.AddBuildPlugin:
+      pluginId: 'com.energizedwork.webdriver-binaries'
+      version: 1.4
+  - org.openrewrite.gradle.RemoveGradleDependency:
+      configuration: implementation
+      groupId: sag
+      artifactId: sagslager-grails4-plugin*

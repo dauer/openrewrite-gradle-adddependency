@@ -1,0 +1,24 @@
+/**
+ * Testing Open Rewrite on Java and Groovy code...
+ * https://docs.openrewrite.org/
+ */
+
+plugins {
+    id "org.openrewrite.rewrite" version "5.38.0"
+}
+
+apply plugin: "groovy"
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'sag:sagslager-grails4-plugin:6.30.0'
+}
+
+rewrite {
+    configFile = project.getRootProject().file("rewrite.yml")
+    activeRecipe("com.yourorg.myexample")
+}
