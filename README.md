@@ -1,5 +1,5 @@
 # openrewrite-gradle-adddependency
-Testing Open Rewrite Gradle AddDependency recipe
+Testing [Open Rewrite](https://docs.openrewrite.org/) Gradle AddDependency recipe
 
 ## Description
 I am trying to add a dependency `implementation "sag:sagslager-klient:1.0.0"` to the dependencies part of my `build.gradle` file with OpenRewrite and the `org.openrewrite.gradle.AddDependency` recipe.
