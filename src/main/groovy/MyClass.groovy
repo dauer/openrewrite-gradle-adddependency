@@ -1,10 +1,8 @@
-import java.util.*;
+class MyClass {
 
-public class MyClass {
-
-    public static void main(String[] args) {
-        Date date = new Date();
-        System.out.println("Hello world");
+    static void main(String[] args) {
+        Date date = new Date()
+        println("Hello world " + date)
     }
 
 }
