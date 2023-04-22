@@ -1,5 +1,24 @@
 # openrewrite-gradle-adddependency
-Testing [Open Rewrite](https://docs.openrewrite.org/) Gradle AddDependency recipe
+Testing [Open Rewrite](https://docs.openrewrite.org/) using [Gradle](https://gradle.org/) AddDependency recipe on [Groovy](https://groovy-lang.org/) code
+
+The code manipulates the build.gradle file
+ * Adds a new plugin
+ * Removes a dependency
+ * Adds a new dependency (working from version 7.40.0...) 
+
+---
+
+## TL;DR
+
+This code was used to report this bug [Gradle AddDependency onlyIfUsing fails to detect usage in Groovy #3053 ](https://github.com/openrewrite/rewrite/issues/3053)
+
+Fixed through [Correctly and completely manage source set assignment to all compilation units #191](https://github.com/openrewrite/rewrite-gradle-plugin/pull/191)
+
+Which is fixed from version 7.40.0 Release (2023-04-21)
+
+_Below is the original error report..._
+
+---
 
 ## Description
 I am trying to add a dependency `implementation "sag:sagslager-klient:1.0.0"` to the dependencies part of my `build.gradle` file with OpenRewrite and the `org.openrewrite.gradle.AddDependency` recipe.
