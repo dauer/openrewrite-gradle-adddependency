@@ -15,7 +15,8 @@ repositories {
 }
 
 dependencies {
-    implementation 'sag:sagslager-grails4-plugin:6.30.0'
+    implementation "org.codehaus.groovy:groovy-all:3.0.15"
+    implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
 }
 
 rewrite {

@@ -14,5 +14,5 @@ recipeList:
       version: 1.4
   - org.openrewrite.gradle.RemoveGradleDependency:
       configuration: implementation
-      groupId: sag
-      artifactId: sagslager-grails4-plugin*
+      groupId: com.google.guava
+      artifactId: guava
